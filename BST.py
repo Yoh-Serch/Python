@@ -56,3 +56,26 @@ class BST:
             self.postorden(nodo.izq)
             self.postorden(nodo.der)
             print(nodo.valor)
+            
+
+if __name__ == "__main__":
+    #Prueba de escritorio
+    arbol = BST() 
+    arbol.insertar(7)
+    arbol.insertar(2)
+    arbol.insertar(5)
+    arbol.insertar(2)
+    arbol.insertar(6)
+    arbol.insertar(9)
+    arbol.insertar(5)
+    arbol.insertar(11)
+    arbol.insertar(4)
+    arbol.insertar(10)
+    arbol.insertar(11)
+    print("Imprimiendo en orden")
+    arbol.inorden(arbol.raiz)
+    print("Imprimiendo en pre-orden")
+    arbol.preorden(arbol.raiz)
+    print("Imprimiendo en post-orden")
+    arbol.postorden(arbol.raiz)
+    
