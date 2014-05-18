@@ -16,3 +16,21 @@ class BST:
     
     def __init__(self):
         pass
+    
+    def insertar(self, valor):
+        n = Nodo(valor)
+        if self.raiz == None:
+            self.raiz = n
+        else:
+            temporal = self.raiz
+            while temporal != None:
+                n.p = temporal
+                if n.valor >= temporal.valor:
+                    temporal = temporal.der
+                else:
+                    temporal = temporal.izq
+            
+            if n.valor < n.p.valor:
+                n.p.izq = n
+            else:
+                n.p.der = n
