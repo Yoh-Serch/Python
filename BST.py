@@ -3,64 +3,60 @@ class Nodo:
     valor = None
     izq = None
     der = None
-    
+
     def __init__(self, valor):
         self.valor = valor
-        
+
     def __str__(self):
         return str(self.valor)
-    
-    
+
+
 class BST:
     raiz = None
-    
+
     def __init__(self):
         pass
-    
-    
+
     def insertar(self, valor):
         n = Nodo(valor)
-        if self.raiz == None:
+        if self.raiz is None:
             self.raiz = n
         else:
             temporal = self.raiz
-            while temporal != None:
+            while temporal is not None:
                 n.p = temporal
                 if n.valor >= temporal.valor:
                     temporal = temporal.der
                 else:
                     temporal = temporal.izq
-            
+
             if n.valor < n.p.valor:
                 n.p.izq = n
             else:
                 n.p.der = n
-                
-    
-    def inorden(self,nodo):
-        if nodo != None:
+
+    def inorden(self, nodo):
+        if nodo is not None:
             self.inorden(nodo.izq)
             print(nodo.valor)
             self.inorden(nodo.der)
-    
-    
-    def preorden(self,nodo):
-        if nodo != None:
+
+    def preorden(self, nodo):
+        if nodo is not None:
             print(nodo.valor)
             self.preorden(nodo.izq)
             self.preorden(nodo.der)
-            
-            
-    def postorden(self,nodo):
-        if nodo != None:
+
+    def postorden(self, nodo):
+        if nodo is not None:
             self.postorden(nodo.izq)
             self.postorden(nodo.der)
             print(nodo.valor)
-            
+
 
 if __name__ == "__main__":
     #Prueba de escritorio
-    arbol = BST() 
+    arbol = BST()
     arbol.insertar(7)
     arbol.insertar(2)
     arbol.insertar(5)
@@ -78,4 +74,3 @@ if __name__ == "__main__":
     arbol.preorden(arbol.raiz)
     print("Imprimiendo en post-orden")
     arbol.postorden(arbol.raiz)
-    
