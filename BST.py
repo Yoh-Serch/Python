@@ -34,3 +34,9 @@ class BST:
                 n.p.izq = n
             else:
                 n.p.der = n
+                
+    def inorden(self,nodo):
+        if nodo != None:
+            self.inorden(nodo.izq)
+            print(nodo.valor)
+            self.inorden(nodo.der)
