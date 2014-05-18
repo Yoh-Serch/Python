@@ -17,6 +17,7 @@ class BST:
     def __init__(self):
         pass
     
+    
     def insertar(self, valor):
         n = Nodo(valor)
         if self.raiz == None:
@@ -35,8 +36,16 @@ class BST:
             else:
                 n.p.der = n
                 
+    
     def inorden(self,nodo):
         if nodo != None:
             self.inorden(nodo.izq)
             print(nodo.valor)
             self.inorden(nodo.der)
+    
+    
+    def preorden(self,nodo):
+        if nodo != None:
+            print(nodo.valor)
+            self.preorden(nodo.izq)
+            self.preorden(nodo.der)
