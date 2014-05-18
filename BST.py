@@ -49,3 +49,10 @@ class BST:
             print(nodo.valor)
             self.preorden(nodo.izq)
             self.preorden(nodo.der)
+            
+            
+    def postorden(self,nodo):
+        if nodo != None:
+            self.postorden(nodo.izq)
+            self.postorden(nodo.der)
+            print(nodo.valor)
